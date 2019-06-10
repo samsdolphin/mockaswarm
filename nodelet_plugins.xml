@@ -1,0 +1,9 @@
+<library path="lib/libcircle">
+    <class name="circle/CircleNode"
+           type="CircleNode"
+           base_class_type="nodelet::Nodelet">
+    <description>
+        mission template nodelet
+    </description>
+    </class>
+</library>
