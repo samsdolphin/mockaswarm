@@ -1,21 +1,21 @@
-#include "circle.hpp"
+#include "vicsek.hpp"
 #include <std_msgs/Float64.h>
 #include <tf/transform_datatypes.h>
 #include <pluginlib/class_list_macros.h>
 
-PLUGINLIB_DECLARE_CLASS(circle, CircleNode, CircleNode, nodelet::Nodelet);
+PLUGINLIB_DECLARE_CLASS(vicsek, VicsekNode, VicsekNode, nodelet::Nodelet);
 
-CircleNode::CircleNode()
+VicsekNode::VicsekNode()
 {
-    setName("CircleNode");
-    ROS_WARN("Construct circle");
+    setName("VicsekNode");
+    ROS_WARN("Construct vicsek");
 }
 
-CircleNode::~CircleNode()
+VicsekNode::~VicsekNode()
 {
 }
 
-void CircleNode::run(double dt)
+void VicsekNode::run(double dt)
 {
     Eigen::Vector3d position, velocity, acceleration;
     position(0) = r * std::sin(w * dt) + initialPosition(0);
@@ -33,26 +33,26 @@ void CircleNode::run(double dt)
     publishCommand(position, velocity, acceleration);
 }
 
-void CircleNode::clean()
+void VicsekNode::clean()
 {
-    ROS_WARN("circle clean");
+    ROS_WARN("vicsek clean");
     MissionTemplateNode::clean();
 }
 
-bool CircleNode::start()
+bool VicsekNode::start()
 {
-    ROS_WARN("circle start");
+    ROS_WARN("vicsek start");
     initialPosition = readAveragePosition(1);
     MissionTemplateNode::start();
     return true;
 }
 
-Eigen::Vector3d CircleNode::getInitialPosition() const
+Eigen::Vector3d VicsekNode::getInitialPosition() const
 {
     return initialPosition;
 }
 
-void CircleNode::onInit()
+void VicsekNode::onInit()
 {
     ros::NodeHandle nh(getPrivateNodeHandle());
     nh.param("w", w, 0.5);

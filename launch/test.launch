@@ -4,8 +4,8 @@
 
 <node pkg="nodelet"
       type="nodelet"
-      args="standalone circle/CircleNode"
-      name="CircleNode_$(arg drone_number)"
+      args="standalone vicsek/VicsekNode"
+      name="VicsekNode_$(arg drone_number)"
       required="true"
       output="screen">
 

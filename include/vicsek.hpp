@@ -1,16 +1,16 @@
-#ifndef CIRCLE_HPP
-#define CIRCLE_HPP
+#ifndef VICSEK_HPP
+#define VICSEK_HPP
 
 #include <nodelet/nodelet.h>
 #include <ros/ros.h>
 
 #include "mission_template.hpp"
 
-class CircleNode : public MissionTemplateNode
+class VicsekNode : public MissionTemplateNode
 {
 public:
-    CircleNode();
-    virtual ~CircleNode();
+    VicsekNode();
+    virtual ~VicsekNode();
 
 public:
     Eigen::Vector3d getInitialPosition() const;
@@ -30,4 +30,4 @@ private:
     double r;
 };
 
-#endif // CIRCLE_HPP
+#endif

@@ -1,6 +1,6 @@
-<library path="lib/libcircle">
-    <class name="circle/CircleNode"
-           type="CircleNode"
+<library path="lib/libvicsek">
+    <class name="vicsek/VicsekNode"
+           type="VicsekNode"
            base_class_type="nodelet::Nodelet">
     <description>
         mission template nodelet
