@@ -1,1 +1,1 @@
-# mockaswarm
+# vicsek
